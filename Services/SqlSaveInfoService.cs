@@ -5,14 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AspNetExercise1.Services;
 
-public class SqlSaveInfoService : ISaveInfoService
+public class SqlSaveInfoService(DbContext dbContext) : ISaveInfoService
 {
-    private readonly DbContext _dbContext;
-
-    public SqlSaveInfoService(DbContext dbContext)
-    {
-        this._dbContext = dbContext;
-    }
+    private readonly DbContext _dbContext = dbContext;
 
     public async Task Save(RequestInfoDto requestInfoDto)
     {

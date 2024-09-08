@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-
+﻿
 namespace AspNetExercise1.Controllers;
 
 public static class HomeEndPoints

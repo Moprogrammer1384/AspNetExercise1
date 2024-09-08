@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace AspNetExercise1.Infrastructure.Persistence.Extensions;
 

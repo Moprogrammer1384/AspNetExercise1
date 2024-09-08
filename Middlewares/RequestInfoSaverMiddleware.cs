@@ -4,15 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetExercise1.Middlewares;
 
-public class RequestInfoSaverMiddleware
+public class RequestInfoSaverMiddleware(
+    RequestDelegate next)
 {
-    private readonly RequestDelegate _next;    
-
-    public RequestInfoSaverMiddleware(
-        RequestDelegate next)
-    {
-        this._next = next;
-    }
+    private readonly RequestDelegate _next = next;
 
     public async Task InvokeAsync(
         HttpContext context, 

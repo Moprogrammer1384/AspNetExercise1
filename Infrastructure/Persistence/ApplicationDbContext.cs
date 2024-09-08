@@ -3,12 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AspNetExercise1.Infrastructure.Persistence;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext(DbContextOptions options) : DbContext(options)
 {
-    public ApplicationDbContext(DbContextOptions options) : base(options)
-    {
-    }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
